@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*
+Pero en lugar de aplicar todo el reset se va a aplicar solo los elementos que estamos usando
+*/
+* {
+  /*patron box Model*/
+  padding: 0;
+  margin: 0;
+}
+
+/*el pixel es una unidad de medida absoluta, es el elemento mas pequeño de una pantalla de un dispositivo. OJO, PERO el pixel de CSS no es igual al pixel de un dispositivo movil.*/
+/*las unidades de medida relativas em y rem se usan para asegurar unlayout consistente y fluido en distintos dispositivos*/
+/*1 rem = 16 px ==> 24px = 1.5rem  32px = 2rem*/
+:root {
+  --color-primario: #000000;
+  --color-secundario: #f6f6f6;
+  --color-terciario: #22d4fd;
+  --color-hover: #272727;
+
+  --fuente-montserrat: "Montserrat", sans serif;
+  --fuente-krona: "Krona One", serif;
+
+  --font-semiBold: 600;
+  --font-regular: 400;
+}
+
+body {
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+  /*height: 100vh; /*vh= viewPort height; el alto del viewport es del 100%*/
+  /*el body es el elemento padre, de todos los elementos de la pagina, pero hay ocasiones que los elementos hijos se quierren salir del rango permitido por el elemento padre (o body, para prevenirlo se hace esot*/
+  box-sizing: border-box;
+}
+
+.encabezado {
+  padding: 2% 0% 0% 15%; /* order de los valores de padding:  padding-top padding-right padding-botton padding-left puede ser en px o en porcentaje*/
+}
+
+.encabezado__menu {
+  display: flex;
+  gap: 80px;
+}
+
+.encabezado__menu_link {
+  font-family: var(--fuente-montserrat);
+  font-size: 1.5rem;
+  font-weight: var(--font-semiBold);
+  color: var(--color-terciario); /* #5ea886;  #74b9aa; */
+  text-decoration: none;
+
+  /*margin: 0 10px;
+  padding: 5px 10px;
+  border: 1px solid #74b9aa;
+  text-decoration: dashed;*/
+}
+
+.encabezado__menu_link:hover {
+  color: #3a89df;
+}
+
+strong {
+  color: var(--color-secundario);
+}
+
+.titulo-destaque {
+  color: var(--color-terciario);
+}
+
+.presentacion {
+  display: flex; /*para usar flexbox*/
+  align-items: center; /*todos los elementos alineados al centro*/
+  padding: 6% 15%; /*para que no este tan lejos el header del footer, cambiamos esta propiedad por padding:  margin: 10% 15%; /*permite la separacion del margen a la izq.*/
+  justify-content: space-between; /*espacio de loa elementos*/
+  gap: 82px; /*separacion entee el teto y la imagen*/
+}
+
+.presentacion__contenido {
+  /*para el contenido de los 2 parrafos*/
+  width: 50%; /* tenia 615px; */
+  display: flex; /*se desajusta todo porque vien por default la propiedad xx = row o en linea horizontal*/
+  flex-direction: column; /*con esto se vuelve ajustar por columnas*/
+  gap: 2.5rem; /*permite separar los elementos entre ellos a 40px ente cada uno de ellos*/
+  /*La propiedad gap no es exclusiva de Flexbox, sin embargo, se utiliza casi siempre en conjunto con él. Esta propiedad especifica en CSS el tamaño de los espacios entre filas y columnas en diseños de cuadrícula, flex y de varias columnas. Su sintaxis es bastante simple y acepta uno o dos valores.*/
+}
+
+.presentacion__contenido__titulo {
+  font-family: var(--fuente-krona);
+  font-size: 2.25rem;
+}
+
+.presentacion__contenido__texto {
+  font-size: 1.5rem;
+  font-family: var(--fuente-montserrat);
+}
+
+.presentacion__enlaces {
+  display: flex; /*para poner los elementos uno abajo del otro, ya que se usa con flex-direction=column*/
+  justify-content: space-between;
+  flex-direction: column; /*con esto se vuelve ajustar por columnas, y el eje de referencia ya no es X, ahora el eje de Referencia es Y y por eso debemos usar align-items par alinear los elementos*/
+  align-items: center; /*se usa esta propiedad pq el eje de referencia cambio al eje Y*/
+  gap: 2rem; /*desde Figma se observa cual es el espacio entre botones y se pone enn gap*/
+}
+.presentacion__enlaces__subtitulos {
+  font-family: var(--fuente-krona);
+  font-size: 1.5rem;
+  font-weight: var(--font-regular);
+}
+
+.presentacion__enlaces__link {
+  /*para los botones*/
+  /*background-color: var(--color-terciario);*/
+  width: 50%; /* tenia 378px;  tenia width: 280px;*/
+  text-align: center;
+  padding: 21.5px 0; /*el 21.5px es de los padding vertical, y el 0 es para loa padding horizontal*/
+  border-radius: 0.5rem; /* tenia border-radius: 16px; /*bordes redondeados*/
+  font-family: var(--fuente-montserrat);
+  font-size: 1.5rem;
+  font-weight: var(
+    --font-semiBold
+  ); /*que en Figma es la parte que dice que es SemiBold, que equivale a grueso de 600*/
+  text-decoration: none; /*la raya del link es una decoracion del texto, pero como no quiere la raya del link, le ponemos que no querremos nada*/
+  color: var(
+    --color-secundario
+  ); /*se cambia de negro a blanco el texto color: #000000; /*os botones en Figma son de color negro*/
+  border: 0.125rem ridge var(--color-terciario); /*border: 10px dotted var(--color-terciario);*/
+  display: flex; /*para poner los elementos uno al lado del otro (ya que por default flex-direction=row), como los iconos y el texto del ancla se ven desalineados, se alinea por renglon o row por default*/
+  justify-content: center; /*se alinean al centro, se usa para centrar pq estamos sobre el eje X, es decir alineados por Renglon*/
+  gap: 0.625rem; /*separacion entre el icono y el texto*/
+}
+
+.presentacion__enlaces__link:hover {
+  /*es algo que no se puede ver en Figma, pero el UIX dejo establecido en el docto de Figma, que
+  cuando se pase el cursos sobre los botones de Instagram y github, se cambi de aspecto los botones*/
+  background-color: var(--color-hover);
+  /*padding: 2%;*/
+  cursor: pointer;
+  border-color: #6cd7e6;
+}
+
+.presentacion__imagen {
+  width: 50%; /*siempre va a ser relativo al elemento padre - en este caso  el elemento es body*/
+}
+
+.pie__pagina {
+  background-color: var(--color-terciario);
+  padding: 1.5rem;
+  color: var(--color-primario);
+  text-align: center;
+  font-family: var(--fuente-montserrat);
+  font-size: 1.5rem;
+  font-size: var(--font-regular); /*regular*/
+}
+
+@media (max-width: 1200px) {
+  .encabezado {
+    padding: 10%; /* order de los valores de padding:  padding-top padding-right padding-botton padding-left puede ser en px o en porcentaje*/
+  }
+
+  .encabezado__menu {
+    justify-content: center;
+  }
+
+  .presentacion {
+    flex-direction: column-reverse; /*los elementos se ponen por columna, pero en orden inverso*/
+    padding: 5%;
+  }
+
+  .presentacion__contenido {
+    width: auto; /*no se puede poner un cero, diferencia entre 10% o auto*/
+  }
+}
+/*  */
+
+h1 {
+  font-weight: bold;
+}
+
+span {
+  color: var(--color-terciario);
+  border: 1px solid var(--color-terciario); /*. Esta propiedad se puede utilizar para definir los valores de ancho del borde, estilo del borde y color del borde*/
+  padding: 3px;
+}
+
+span:hover {
+  border-color: aquamarine;
+  color: #9acc9c;
+  padding: 3%;
+}
