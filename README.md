@@ -15,4 +15,4 @@
 
 ### 24 Kuant
 
-### Ver como funciona: https://24kuant.github.io/primer-portafolio/    o también:  
+### Ver como funciona: https://24kuant.github.io/primer-portafolio/    o también:  https://primer-portafolio-omega.vercel.app/
