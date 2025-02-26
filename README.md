@@ -15,4 +15,4 @@
 
 ### 24 Kuant
 
-### Ver como funciona: 
+### Ver como funciona: https://24kuant.github.io/primer-portafolio/    o también:  
