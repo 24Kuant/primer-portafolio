@@ -13,6 +13,6 @@
 
 ## Hecho por:
 
-###24 Kuant
+### 24 Kuant
 
-###ver como funciona: 
+### Ver como funciona: 
